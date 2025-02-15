@@ -29,8 +29,8 @@ function App() {
       <Card
         name="Bewnet"
         email="bewnetaddisalem@gmail.com"
-        age={20}
-        color="#48c9b0"
+        age="No body nos"
+        color="#16213E "
       />
       <div className="container">
         <h1>React Counter</h1>
