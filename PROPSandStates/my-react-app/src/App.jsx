@@ -24,14 +24,30 @@ function App() {
     setMessage("Counter reset!");
   };
 
+  const [note, addNote] = useState("");
+  const [title, addTitle] = useState("title");
+
+  function handleForm(e){
+    e.preventDefault();
+    addTitle(note);
+    addNote("");
+  }
+
+  function deleteTitle(e){
+
+  }
+
   return (
     <>
+    {/* PROPS */}
       <Card
         name="Bewnet"
         email="bewnetaddisalem@gmail.com"
         age="No body nos"
         color="#16213E "
       />
+
+      {/* State */}
       <div className="container">
         <h1>React Counter</h1>
         <p className="msg">{message}</p>
@@ -48,6 +64,15 @@ function App() {
           </button>
         </div>
       </div>
+
+      {/* Note add the delete */}
+      <div className="myNote">{title}</div>
+        <button onClick={deleteTitle}>Delete</button>
+
+      <form onSubmit={handleForm}>
+        <input type="text" value={note} placeholder={note} onChange={(e)=> addNote(e.target.value)}/>
+        <button type="submit" >Submit</button>
+      </form>
     </>
   );
 }

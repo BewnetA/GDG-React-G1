@@ -93,3 +93,14 @@ h1 {
 .card-content strong {
   color: #ffdf00;
 }
+
+.myNote{
+  color: #000;
+  background-color: #25e3fc;
+}
+
+button{
+  background-color: #4ea9ff;
+  margin-bottom: 50px;
+  margin-top: 10px;
+}
