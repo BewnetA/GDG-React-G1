@@ -24,6 +24,7 @@ function App() {
     setMessage("Counter reset!");
   };
 
+  // Add and delete note
   const [note, addNote] = useState("");
   const [title, addTitle] = useState("title");
 
@@ -36,7 +37,9 @@ function App() {
   function deleteTitle(e){
 
   }
+//  ============================================================================ 
 
+  // Tasl-Managment
   return (
     <>
     {/* PROPS */}
@@ -73,6 +76,9 @@ function App() {
         <input type="text" value={note} placeholder={note} onChange={(e)=> addNote(e.target.value)}/>
         <button type="submit" >Submit</button>
       </form>
+
+      {/* ============================================================================ */}
+
     </>
   );
 }
