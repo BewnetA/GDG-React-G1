@@ -1,32 +1,34 @@
-import AboutUs from "./pages/AboutUs"
-import Home from "./pages/Home"
-import Contact from "./pages/Contact"
-import {Routes, Route, Link} from "react-router-dom"
+import { Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/AboutUs";
+import Contact from "./pages/Contact";
+import Profile from "./pages/DashBoard";
+import NotFound from "./pages/NotFound";
+import "./App.css";  // ✅ Import CSS
 
-function NotFound(){
-  return <h2>Sorry man Nothing to see here.</h2>
-}
-function App() {
+const App = () => {
+    return (
+        <>
+            <nav>
+                <ul>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
+                    <li><Link to="/profile/johndoe">Profile</Link></li>
+                </ul>
+            </nav>
 
-  return (
-    <>
-     <nav>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      <Link to="/contact">Contact</Link>
-      </nav>
-        {/* <Router> */}
-          <Routes>
-            <Route path="*" element={<NotFound/>}/>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/about" element={<AboutUs/>}/>
-            <Route path="/contact" element={<Contact/>}/>
-            </Routes>
-        {/* </Router> */}
-
-        <h1>Routers</h1>
-    </>
-  );
-}
+            <div className="main-content">
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/profile/:username" element={<Profile />} />
+                    <Route path="*" element={<NotFound />} />
+                </Routes>
+            </div>
+        </>
+    );
+};
 
 export default App;
